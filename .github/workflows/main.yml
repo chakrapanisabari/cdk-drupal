@@ -3,7 +3,11 @@ jobs:
   aws_cdk:
     runs-on: ubuntu-latest
     steps:
-
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          path: src
+      
       - name: cdk diff
         uses: jd-carroll/aws-cdk-cli-commands@v1.1.10
         with:
