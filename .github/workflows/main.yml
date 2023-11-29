@@ -21,7 +21,7 @@ jobs:
           AWS_DEFAULT_REGION: 'ap-northeast-1'
           
       - name: cdk bootstrap
-        uses: jd-carroll/aws-cdk-cli-commands@v1.1.10
+        uses: youyo/aws-cdk-github-actions@v2
         with:
           cdk_subcommand: 'bootstrap'
           actions_comment: true
