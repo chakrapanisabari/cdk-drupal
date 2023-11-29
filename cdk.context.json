@@ -1,0 +1,117 @@
+{
+  "vpc-provider:account=959068696076:filter.vpc-id=vpc-9bee0ff2:region=ap-south-1:returnAsymmetricSubnets=true": {
+    "vpcId": "vpc-9bee0ff2",
+    "vpcCidrBlock": "172.31.0.0/16",
+    "ownerAccountId": "959068696076",
+    "availabilityZones": [],
+    "subnetGroups": [
+      {
+        "name": "Isolated",
+        "type": "Isolated",
+        "subnets": [
+          {
+            "subnetId": "subnet-060bc3d332ca5a541",
+            "cidr": "172.31.48.0/24",
+            "availabilityZone": "ap-south-1a",
+            "routeTableId": "rtb-0c4e531d105e29844"
+          },
+          {
+            "subnetId": "subnet-003d996dbb7ac0b5f",
+            "cidr": "172.31.49.0/24",
+            "availabilityZone": "ap-south-1b",
+            "routeTableId": "rtb-0c4e531d105e29844"
+          },
+          {
+            "subnetId": "subnet-07dbcac70516a1400",
+            "cidr": "172.31.50.0/24",
+            "availabilityZone": "ap-south-1c",
+            "routeTableId": "rtb-0c4e531d105e29844"
+          }
+        ]
+      },
+      {
+        "name": "Public",
+        "type": "Public",
+        "subnets": [
+          {
+            "subnetId": "subnet-e0618789",
+            "cidr": "172.31.16.0/20",
+            "availabilityZone": "ap-south-1a",
+            "routeTableId": "rtb-98c425f1"
+          },
+          {
+            "subnetId": "subnet-2d2f0c67",
+            "cidr": "172.31.0.0/20",
+            "availabilityZone": "ap-south-1b",
+            "routeTableId": "rtb-98c425f1"
+          },
+          {
+            "subnetId": "subnet-18ab5263",
+            "cidr": "172.31.32.0/20",
+            "availabilityZone": "ap-south-1c",
+            "routeTableId": "rtb-98c425f1"
+          }
+        ]
+      }
+    ]
+  },
+  "security-group:account=959068696076:region=ap-south-1:securityGroupId=sg-f948a590": {
+    "securityGroupId": "sg-f948a590",
+    "allowAllOutbound": false
+  },
+  "ami:account=959068696076:filters.image-type.0=machine:filters.name.0=ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-20230919:filters.state.0=available:region=ap-south-1": "ami-0287a05f0ef0e9d9a",
+  "availability-zones:account=959068696076:region=ap-south-1": [
+    "ap-south-1a",
+    "ap-south-1b",
+    "ap-south-1c"
+  ],
+  "ami:account=959068696076:filters.image-type.0=machine:filters.name.0=ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-20230919:filters.state.0=available:region=ap-northeast-2": "ami-086cae3329a3f7d75",
+  "availability-zones:account=959068696076:region=ap-northeast-2": [
+    "ap-northeast-2a",
+    "ap-northeast-2b",
+    "ap-northeast-2c",
+    "ap-northeast-2d"
+  ],
+  "vpc-provider:account=959068696076:filter.vpc-id=vpc-57698a3e:region=ap-northeast-2:returnAsymmetricSubnets=true": {
+    "vpcId": "vpc-57698a3e",
+    "vpcCidrBlock": "172.31.0.0/16",
+    "ownerAccountId": "959068696076",
+    "availabilityZones": [],
+    "subnetGroups": [
+      {
+        "name": "Public",
+        "type": "Public",
+        "subnets": [
+          {
+            "subnetId": "subnet-7d907314",
+            "cidr": "172.31.0.0/20",
+            "availabilityZone": "ap-northeast-2a",
+            "routeTableId": "rtb-b29775db"
+          },
+          {
+            "subnetId": "subnet-4a986631",
+            "cidr": "172.31.32.0/20",
+            "availabilityZone": "ap-northeast-2b",
+            "routeTableId": "rtb-b29775db"
+          },
+          {
+            "subnetId": "subnet-dbb59891",
+            "cidr": "172.31.16.0/20",
+            "availabilityZone": "ap-northeast-2c",
+            "routeTableId": "rtb-b29775db"
+          },
+          {
+            "subnetId": "subnet-a1dad8fd",
+            "cidr": "172.31.48.0/20",
+            "availabilityZone": "ap-northeast-2d",
+            "routeTableId": "rtb-b29775db"
+          }
+        ]
+      }
+    ]
+  },
+  "security-group:account=959068696076:region=ap-northeast-2:securityGroupId=sg-ec23ca85": {
+    "securityGroupId": "sg-ec23ca85",
+    "allowAllOutbound": false
+  }
+}
