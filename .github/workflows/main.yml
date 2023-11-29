@@ -7,6 +7,7 @@ jobs:
         with:
           fetch-depth: 0
           path: src
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       
       - name: cdk diff
         uses: jd-carroll/aws-cdk-cli-commands@v1.1.10
