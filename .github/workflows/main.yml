@@ -7,7 +7,6 @@ jobs:
         with:
           fetch-depth: 0
           path: src
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: cdk synth
         uses: youyo/aws-cdk-github-actions@v2
