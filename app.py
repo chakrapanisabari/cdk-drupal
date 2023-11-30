@@ -5,6 +5,7 @@ import aws_cdk as cdk
 
 from cdk_drupal.cdk_drupal_stack import EC2InstanceStack
 from cdk_drupal.vpc_stack import VpcDemoStack
+from cdk_drupal.aws_rds_stack import RDSInstanceStack
 
 app = cdk.App()
 EC2InstanceStack(app, "EC2InstanceStack",
@@ -42,5 +43,8 @@ VpcDemoStack(app, "VpcDemoStack",
 
     # For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html
     )
+
+
+RDSInstanceStack(app, "MyRDSStack", env=cdk.Environment(account=os.getenv('CDK_DEFAULT_ACCOUNT'), region=os.getenv('CDK_DEFAULT_REGION')))
 
 app.synth()

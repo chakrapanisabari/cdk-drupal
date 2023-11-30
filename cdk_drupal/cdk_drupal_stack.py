@@ -67,8 +67,6 @@ class EC2InstanceStack(Stack):
         #     )
         # asset.grant_read(instance.role)
 
-# app = App()
-# EC2InstanceStack(app, "ec2-instance")
-# app.synth()
+
 
 
