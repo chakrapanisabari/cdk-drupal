@@ -1,22 +1,7 @@
 #!/bin/bash
-sudo apt-get update 
-sudo apt-get upgrade
-sudo apt install -y php8.1
-sudo apt install php8.1 php8.1-fpm php8.1-mysql php-common php8.1-cli php8.1-common php8.1-opcache php8.1-readline php8.1-mbstring php8.1-xml php8.1-gd php8.1-curl
-
-#Installing nginx
-sudo apt install -y nginx
-sudo systemctl start nginx
-sudo systemctl status nginx
-sudo systemctl enable nginx
-sudo apt update -y
-sudo apt install -y jq
-
-#MySQL Installation
-sudo apt install mysql-server
-sudo mysql_secure_installation -y
-sudo systemctl start mysql
-sudo systemctl enable mysql
+sudo apt-get update -y
+# sudo apt-get upgrade -y 
+sudo apt install -y php8.1-fpm php8.1-mysql php-common php8.1-cli php8.1-common php8.1-opcache php8.1-readline php8.1-mbstring php8.1-xml php8.1-gd php8.1-curl
 
 sudo systemctl start php8.1-fpm
 sudo systemctl enable php8.1-fpm
@@ -31,6 +16,14 @@ max_input_time = 1000
 EOF
 
 sudo systemctl restart php8.1-fpm
+
+#Installing nginx
+sudo apt install -y nginx
+sudo systemctl start nginx
+sudo systemctl status nginx
+sudo systemctl enable nginx
+sudo apt update -y
+sudo apt install -y jq
 
 # x=$(echo "${rds_endpt}" | cut -d':' -f1)
 # echo $x
@@ -176,7 +169,7 @@ http
         # PHP 5 socket location.
         #fastcgi_pass unix:/var/run/php5-fpm.sock;
         # PHP 7 socket location.
-        fastcgi_pass unix:/var/run/php-fpm/www.sock;
+        fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
         fastcgi_index  index.php;
         fastcgi_param  SCRIPT_NAME      $fastcgi_script_name;
         fastcgi_param  REQUEST_METHOD   $request_method;
@@ -212,9 +205,25 @@ EOF
 
 sudo systemctl restart nginx
 
-cd /var/www/html/drupal/
+#MySQL Installation
+sudo apt install mysql-server -y
+# sudo mysql_secure_installation -y
+sudo systemctl start mysql
+sudo systemctl enable mysql
 
+cd /home/ubuntu/
 sudo php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 sudo php -r "if (hash_file('sha384', 'composer-setup.php') === 'e21205b207c3ff031906575712edab6f13eb0b361f2085f1f1237b7126d785e826a450292b6cfd1d64d92e6563bbde02') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
 sudo php composer-setup.php
 sudo php -r "unlink('composer-setup.php');"
+mv composer.phar /usr/local/bin/composer
+
+cd /var/www/html/drupal/
+composer global require drush/drush
+
+# #!/bin/bash
+# sudo yum update 
+# sudo yum upgrade
+# sudo yum install -y nginx php-fpm
+# sudo service nginx start
+# sudo service php-fpm start

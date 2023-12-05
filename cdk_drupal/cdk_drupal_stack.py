@@ -66,7 +66,3 @@ class EC2InstanceStack(Stack):
         #     file_path=local_path
         #     )
         # asset.grant_read(instance.role)
-
-
-
-

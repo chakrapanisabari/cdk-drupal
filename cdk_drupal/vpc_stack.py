@@ -40,7 +40,7 @@ class VpcDemoStack(Stack):
                     cidr_mask=20
                 )
             ],
-            nat_gateways=1,
+            nat_gateways=1
             # flow_logs={
             #     'flow-logs-s3': {
             #         'destination': ec2.FlowLogDestination.to_s3(
